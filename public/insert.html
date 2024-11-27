@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="insert.css">
+    <link rel="stylesheet" href="loader.css">
+
+    <title>Insert Hotel</title>
+</head>
+<body>
+    <span class="loader hidden"><span class="loader-inner"></span></span>
+
+    <div class="fade-in">
+        <div class="mainContainer">
+            
+    
+                <div id="enterDetails">
+                
+                    <h3>Insert Infomation</h3>
+                    <h5>Room Number</h5> 
+                    <input class="input" id="RoomID" type="text"> 
+    
+                    <h6>Name</h6> 
+                    <input class="input" id="enterName" type="text"> 
+    
+                    <h6>Check In</h6> 
+                    <input class="input" id="enIn" type="text">
+                    
+                    <h6>Check Out</h6> 
+                    <input class="input" id="enOut" type="text">
+                    
+                    <h6>Phone Number</h6> 
+                    <input class="input" id="enPhone" type="text">
+                    
+                    <br><br>
+                    <div>
+                        <button class="insert-button" id="insert">INSERT</button>
+                        <button class="insert-button" id="update">UPDATE</button><br><br>
+                        <button class="insert-button" id="remove">REMOVE</button> <br><br>
+                    </div>      
+                </div>
+            
+                <div id="findDetails">
+                        <h3>Find Room</h3>
+                        <!-- <h5>Room Number</h5> -->
+                        <input class="input" id="FindRoomID" type="text" placeholder=" Room Number"> <br><br>
+                        <button class="insert-button" id="find">FIND</button>
+                        <h6 id="findName" type="text"></h6>
+                        <h6 id="findIn" type="text"></h6>
+                        <h6 id="findOut" type="text"></h6>
+                        <h6 id="findPhone" type="text"></h6>
+                </div>
+                <br><br>
+                <button class="exit-button" onclick="redirectTofontinfo()">EXIT</button>
+
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+
+    <script src="insert.js" type="module"></script>
+    
+</body>
+</html>

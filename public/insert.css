@@ -1,0 +1,229 @@
+/* รีเซ็ตค่าพื้นฐาน */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* สไตล์สำหรับ body */
+body {
+    margin: 0;
+    padding: 50px 20px; /* เพิ่ม Padding เพื่อให้มีระยะห่างจากขอบ */
+    padding-bottom: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align ให้เริ่มต้นจากด้านบน */
+    height: 130vh;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #06283D, #256D85);
+    color: #333;
+}
+
+
+
+/* สไตล์สำหรับ main container */
+.mainContainer {
+    
+    width: 1000px;
+    max-width: 500px;
+    padding: 25px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* หัวข้อหลัก */
+.mainContainer h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #06283D;
+    margin-bottom: 20px;
+}
+
+/* สไตล์สำหรับ h5, h6 และ input */
+h5, h6 {
+    font-size: 16px;
+    color: #06283D;
+    margin-bottom: 5px;
+}
+
+/* เพิ่มระยะห่างระหว่าง input */
+input.input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+    margin-bottom: 15px;
+}
+
+/* เมื่อมีการ focus ที่ input */
+input.input:focus {
+    border-color: #256D85;
+    outline: none;
+}
+
+/* สไตล์สำหรับปุ่ม */
+.insert-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: #06283D;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.insert-button:hover {
+    background: #256D85;
+    transform: translateY(-2px);
+}
+
+.insert-button:active {
+    transform: translateY(0);
+}
+
+/* สำหรับกลุ่มปุ่ม */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.button-group .insert-button {
+    width: 48%;
+}
+
+
+.exit-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: #D9534F; /* สีแดง */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.exit-button:hover {
+    background: #C9302C; /* สีแดงเข้มเมื่อ hover */
+    transform: translateY(-2px);
+}
+
+.exit-button:active {
+    transform: translateY(0);
+}
+
+/* สไตล์สำหรับ Find Room */
+#findDetails {
+    margin-top: 20px;
+    padding: 25px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+#findDetails h3 {
+    font-size: 22px;
+    color: #06283D;
+    margin-bottom: 15px;
+}
+
+/* การตกแต่งสำหรับ input ค้นหาห้อง */
+#findRoomID {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+}
+
+#findRoomID:focus {
+    border-color: #256D85;
+    outline: none;
+}
+
+/* ปุ่มค้นหาห้อง */
+#find-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: #06283D;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+#find-button:hover {
+    background: #256D85;
+    transform: translateY(-2px);
+}
+
+#find-button:active {
+    transform: translateY(0);
+}
+
+/* ปรับแต่งรูปร่างของ input สำหรับ "Room Number" */
+#RoomID {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+    margin-bottom: 15px;
+}
+
+#RoomID:focus {
+    border-color: #256D85;
+    outline: none;
+}
+
+/* เพิ่มระยะห่างระหว่างช่อง input ใน "Find Room" */
+#findRoomID {
+    margin-top: 10px;
+}
+
+/* แอนิเมชัน */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

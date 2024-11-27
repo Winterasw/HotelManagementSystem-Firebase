@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Hotel Management</title>
+    <script type="module" src="app.js"></script>
+    <link rel="stylesheet" href="fontinfo.css">
+    <link rel="stylesheet" href="loader.css">
+
+</head>
+<body>
+<div class="fade-in">
+    <span class="loader hidden"><span class="loader-inner"></span></span>
+
+    <h1>HOTEL USER INFOMATION</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Room</th>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Check-in</th>
+                <th>Check-out</th>
+            </tr>
+        </thead>
+        <tbody id="tbody1">
+            
+        </tbody>
+    </table>
+    
+    <div class="exit-button-container">
+        <button class="exit-button" onclick="redirectToIndex()">Exit</button>
+        <button class="manage-button" onclick="redirectToinsert()">Manage Data</button>
+
+    </div>
+
+</div>
+<script src="index.js"></script>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+    
+    const firebaseConfig = {
+    apiKey: "AIzaSyD4DcsbKOUymIlf-nnEWeNS4ZJ7dBFGDiw",
+    authDomain: "hotel-management-b2b44.firebaseapp.com",
+    databaseURL: "https://hotel-management-b2b44-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "hotel-management-b2b44",
+    storageBucket: "hotel-management-b2b44.firebasestorage.app",
+    messagingSenderId: "19712897497",
+    appId: "1:19712897497:web:01bef42130c3a5ef5b69c8",
+    measurementId: "G-DJ7P2NQ0J9"
+  };
+  
+        import {getDatabase, ref, get, set, child, update, remove, onValue} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js"; //Copy and Paste the URL from near the top of the CDN you pasted in from firebase
+        // Initialize Firebase
+        // const analytics = getAnalytics(app);
+        const db = getDatabase();
+        
+        // fontinfo table
+    function AddItemToTable(Room, Name,PhoneNumber,CheckIn,ChechOut){
+        var tbody = document.getElementById('tbody1');
+        var trow = document.createElement("tr");
+        var td1 = document.createElement("td");
+        var td2 = document.createElement("td");
+        var td3 = document.createElement("td");
+        var td4 = document.createElement("td");
+        var td5 = document.createElement("td");
+        var td6 = document.createElement("td");
+
+
+
+        td1.innerHTML = Room;
+        td2.innerHTML = Name;
+        td3.innerHTML = PhoneNumber;
+        td4.innerHTML = CheckIn;
+        td5.innerHTML = ChechOut;
+
+        trow.appendChild(td1);
+        trow.appendChild(td2);
+        trow.appendChild(td3);
+        trow.appendChild(td4);
+        trow.appendChild(td5);
+        tbody.appendChild(trow);
+    }
+
+    function AddAllItemToTable(Hotel){
+
+        Hotel.forEach(element => {
+            AddItemToTable(element.key, element.Name, element.PhoneNumber, element.CheckIn, element.CheckOut);
+        });
+        
+    }
+
+    function GetAllData() {
+        const dbref = ref(db, "Hotel");
+        onValue(dbref,(snapshot)=>{
+            var Hotel = [];
+            snapshot.forEach(childSnapshot => {
+                const item = childSnapshot.val();
+                item.key = childSnapshot.key;
+                Hotel.push(item);
+            });
+            AddAllItemToTable(Hotel);
+        })
+       
+    }
+
+    window.onload = GetAllData();
+</script>
+</body>
+</html>

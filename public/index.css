@@ -1,0 +1,157 @@
+/* รีเซ็ตค่าพื้นฐาน */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* สไตล์สำหรับ body */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #06283D, #256D85);
+    color: #333;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* สไตล์สำหรับ headings container */
+.headingsContainer {
+    width: 100%;
+    max-width: 400px;
+    padding: 35px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* หัวข้อหลัก */
+.headingsContainer h3 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #06283D;
+    margin-bottom: 15px;
+}
+
+/* สไตล์สำหรับ main container */
+.mainContainer {
+    width: 100%;
+    padding: 20px;
+}
+
+/* สไตล์สำหรับ subcontainer */
+.subcontainer {
+    margin-bottom: 20px;
+}
+
+/* สไตล์สำหรับ label */
+.subcontainer label {
+    display: block;
+    font-size: 14px;
+    color: #06283D;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* สไตล์สำหรับ input */
+#EmployeeID, #password {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+/* เมื่อมีการ focus ที่ input */
+#EmployeeID:focus, #password:focus {
+    border-color: #256D85;
+    outline: none;
+}
+
+/* สไตล์สำหรับปุ่ม */
+#EmBtn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: #06283D;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* สไตล์สำหรับปุ่มเมื่อ hover */
+#EmBtn:hover {
+    background: #256D85;
+    transform: translateY(-2px);
+}
+
+/* สไตล์สำหรับปุ่มเมื่อ active */
+#EmBtn:active {
+    transform: translateY(0);
+}
+
+/* แอนิเมชัน */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.6s ease-in-out forwards;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
