@@ -6,10 +6,11 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="loader.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Document</title>
+
+    <title>Hotel Management System</title>
 </head>
 <body>
-    <span class="loader hidden"><span class="loader-inner"></span></span>
+   <span class="loader hidden"><span class="loader-inner"></span></span>
 
         <!-- Headings for the form -->
         <div class="fade-in">
@@ -19,22 +20,21 @@
                     <h3>Hotel Management</h3>
                     <!-- Username -->
                     <div class="subcontainer">
-                        <i class="fa-solid fa-user"></i><br><br>
-                        <input id="EmployeeID" type="text" placeholder="Admin ID"  >
+                      <i class="fa-solid fa-user"></i><br><br>                  
+                       <input id="EmployeeID" type="text" placeholder="Admin ID"  >
                         <br><br>
                         <!-- Password -->
-                        <i class="fa-solid fa-lock"></i><br><br>
+                        <i class="fa-solid fa-lock"></i><br><br>                       
                         <input id="password" type="password" placeholder="Enter Password" >
                     </div>
                     <button type="button" id="EmBtn">Login</button>
                 </div>
             </div>
-            <div id="alertBox" class="alert">
-                <strong>Error!</strong> Invalid ID and password.
-              </div>
+            <div class="alert" id="alertBox">
+              <strong>Error!</strong> Invalid Admin ID or password.
+          </div>
         </div>    
-
-
+        
         <script src="index.js"></script>
         <script src="app.js" type="module"></script>
 </body>

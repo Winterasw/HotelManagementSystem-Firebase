@@ -1,0 +1,47 @@
+{
+  "Admin": {
+    "EmployeeID": "admin",
+    "Name": "Admin1",
+    "Password": "123",
+    "lockUntil": "",
+    "loginAttemps": 6
+  },
+  "Hotel": {
+    "Room1": {
+      "CheckIn": "24-04-2567",
+      "CheckOut": "24-04-2567",
+      "Name": "Capybara",
+      "PhoneNumber": "022229999"
+    },
+    "Room2": {
+      "CheckIn": "1-04-2567",
+      "CheckOut": "3-04-2567",
+      "Name": "Sophia Carter",
+      "PhoneNumber": "0941234567"
+    },
+    "Room3": {
+      "CheckIn": "4-04-2567",
+      "CheckOut": "8-04-2567",
+      "Name": "Liam Mitchell",
+      "PhoneNumber": "0829876543"
+    },
+    "Room4": {
+      "CheckIn": "4-04-2567",
+      "CheckOut": "8-04-2567",
+      "Name": "Emily Bennett",
+      "PhoneNumber": "0863219876"
+    },
+    "Room5": {
+      "CheckIn": "24-04-2567",
+      "CheckOut": "28-04-2567",
+      "Name": "Asawin Inthakun",
+      "PhoneNumber": "022229999"
+    },
+    "Room6": {
+      "CheckIn": "11-11-2567",
+      "CheckOut": "12-11-2567",
+      "Name": "Christmas Ronaldo",
+      "PhoneNumber": "0766213322"
+    }
+  }
+}

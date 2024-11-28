@@ -25,12 +25,6 @@ const inputs = {
     phone: document.getElementById("enPhone"),
     findRoomID: document.getElementById("FindRoomID")
 };
-const findResults = {
-    name: document.getElementById("findName"),
-    checkIn: document.getElementById("findIn"),
-    checkOut: document.getElementById("findOut"),
-    phone: document.getElementById("findPhone")
-};
 
 // Button references
 const insertBtn = document.getElementById("insert");
@@ -81,18 +75,25 @@ function insertData() {
 
 }
 
+const findResults = {
+    name: document.getElementById("findName"),
+    checkIn: document.getElementById("findIn"),
+    checkOut: document.getElementById("findOut"),
+    phone: document.getElementById("findPhone")
+};
+
 function findData() {
-    if (!inputs.findRoomID.value) return alert("Please enter a Room Number");
-    get(child(ref(db), `Hotel/${inputs.findRoomID.value}`))
+    if (!inputs.findRoomID.value) return alert("Please enter a Room Number"); // เช็คว่ามี Input ไหม ถ้าไม่มี alert
+    get(child(ref(db), `Hotel/${inputs.findRoomID.value}`)) // รับค่าข้อมูลจาก Key Hotel ตาม input ห้อง ที่ใส่เข้ามา
         .then((snapshot) => {
-            if (snapshot.exists()) {
-                const data = snapshot.val();
-                findResults.name.textContent = `Name: ${data.Name}`;
+            if (snapshot.exists()) { // ถ้ามีข้อมูลทำในนี้
+                const data = snapshot.val(); // เก็บข้อมูลทั้งหมดใน database ไว้ในตัวแปล data
+                findResults.name.textContent = `Name: ${data.Name}`;    // นำข้อมูลจาก data.Name มาเก็บไว้ใน findResults เพื่อไปแสดงในหน้าเว็ป
                 findResults.checkIn.textContent = `Check In: ${data.CheckIn}`;
                 findResults.checkOut.textContent = `Check Out: ${data.CheckOut}`;
                 findResults.phone.textContent = `Phone: ${data.PhoneNumber}`;
             } else {
-                alert("Room not found");
+                alert("Room not found");    // ถ้าห้องไม่มีข้อมูลอยู่จะ alert
             }
         })
         .catch((error) => alert(error));

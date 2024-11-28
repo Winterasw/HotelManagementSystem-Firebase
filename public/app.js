@@ -22,29 +22,33 @@
          // Initialize Firebase
          const app = initializeApp(firebaseConfig);
      
-         const db = getDatabase();
+         const dbRef = ref(getDatabase());
+
+         
              function FindAdmin() {
                  
-                 var EmployeeID = document.getElementById("EmployeeID").value;
+                 var EmployeeID = document.getElementById("EmployeeID").value; 
                  var password = document.getElementById("password").value;
-                 const dbRef = ref(getDatabase());
-                     get(child(dbRef, 'Admin/EmployeeID')).then((snapshot) => {
+                 const userData = child(dbRef, 'Admin/');
+
+                     get(child(dbRef, 'Admin/')).then((snapshot) => {
                          if (snapshot.exists()) {
-                             var tempPass = snapshot.val();
+                             const userID = snapshot.child("EmployeeID").val();
+                             const userPass = snapshot.child("Password").val();
                              
-                             if(password==tempPass)
+                             if(password==userPass && EmployeeID==userID)
                                  redirectTofontinfo();
-                             else
+                             else{
+                             hideAlert()
+                             setTimeout(showAlert, 200);
                              alertLog();
+                             }
                          } else {
                              alertLog();
                          }
-                         }).catch((error) => {
-                            hideAlert()
-                            setTimeout(showAlert, 200);
-                           
-                 });
+                         }).catch((error) => {});
              }
+             
              document.getElementById("EmBtn").addEventListener('click', FindAdmin);
 
              function showAlert() {
